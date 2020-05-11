@@ -48,12 +48,16 @@ body {
 
 .primary-heading{
   text-transform: uppercase;
+  backface-visibility: hidden;
 }
 
 .primary-heading-main{
   display: block;
   letter-spacing: 40px;
   font-size: 40px;
+  animation-name: easeOutRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
 .primary-heading-sub{
@@ -61,4 +65,37 @@ body {
   font-size: 16px;
   letter-spacing: 16px;
   font-weight: 700;
+  animation: easeOutLeft 1s ease-out;
+}
+
+@keyframes easeOutRight {
+  from {
+    opacity: 0;
+    transform: translate(-100px);
+  }
+
+  80% {
+    transform: translate(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes easeOutLeft {
+  from {
+    opacity: 0;
+    transform: translate(100px);
+  }
+
+  80% {
+    transform: translate(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
 }
