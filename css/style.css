@@ -35,17 +35,17 @@ html {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute;
     top: 1em;
     left: 1em;
 }
 
-.logo {
+.header__logo {
   height: 2em;
 }
 
-.text-box {
+.header__text-box {
   color: white;
   position: absolute;
   top: 40%;
@@ -60,7 +60,7 @@ html {
   margin-bottom: 5rem;
 }
 
-.primary-heading-main{
+.primary-heading--main{
   display: block;
   letter-spacing: 3.9rem;
   font-size: 4rem;
@@ -69,7 +69,7 @@ html {
   animation-timing-function: ease-out;
 }
 
-.primary-heading-sub{
+.primary-heading--sub{
   display: block;
   font-size: 1.6rem;
   letter-spacing: 1.5rem;
@@ -135,7 +135,7 @@ html {
   animation-fill-mode: backwards;
 }
 
-.btn-white{
+.btn--white{
   background-color: white;
   display: inline-block;
   padding: .7rem 1.5rem;
