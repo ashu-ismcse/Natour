@@ -1,9 +1,16 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #24b485;
+$color-grey-dark: #777;
+$color-white: #fff;
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 body {
   /* fontfamily in body and not in universal selector because of inheritance,
@@ -12,103 +19,144 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #777;
+  color: $color-grey-dark;
   padding: 3rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 .header {
   position: relative;
   height: 95vh;
-  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(36, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right, rgba($color-primary-light, 0.8) , rgba($color-primary-dark, 0.8)) ,url(../img/hero.jpg);
   /* background size : cover, fills the width of the container */
   background-size: cover;
   /* background position : top, will fixthe top and whenever screen size is altered
   top will not get   cropped */
   background-position: top;
   border-radius: 0.3em;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-  .header__logo-box {
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  &__logo-box {
     position: absolute;
     top: 1em;
-    left: 1em; }
-  .header__logo {
-    height: 2em; }
-  .header__text-box {
+    left: 1em;
+  }
+
+  &__logo {
+    height: 2em;
+  }
+
+  &__text-box {
     color: white;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center; }
+    text-align: center;
+  }
+}
 
-.primary-heading {
+
+.primary-heading{
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin-bottom: 5rem; }
-  .primary-heading--main {
+  margin-bottom: 5rem;
+
+  &--main{
     display: block;
     letter-spacing: 3.9rem;
     font-size: 4rem;
     animation-name: easeOutRight;
     animation-duration: 1s;
-    animation-timing-function: ease-out; }
-  .primary-heading--sub {
+    animation-timing-function: ease-out;
+  }
+  
+  &--sub{
     display: block;
     font-size: 1.6rem;
     letter-spacing: 1.5rem;
     font-weight: 700;
-    animation: easeOutLeft 1s ease-out; }
+    animation: easeOutLeft 1s ease-out;
+  }
+}
 
 @keyframes easeOutRight {
   from {
     opacity: 0;
-    transform: translateX(-10rem); }
+    transform: translateX(-10rem);
+  }
+
   80% {
-    transform: translateX(0.5rem); }
+    transform: translateX(.5rem);
+  }
+
   to {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes easeOutLeft {
   from {
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateX(10rem);
+  }
+
   80% {
-    transform: translateX(-0.5rem); }
+    transform: translateX(-.5rem);
+  }
+
   to {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes easeOutTop {
   from {
     opacity: 0;
-    transform: translateY(2rem); }
-  to {
+    transform: translateY(2rem);
+  }
+
+  to{
     opacity: 1;
-    transform: translateY(0); } }
+    transform: translateY(0);
+  }
+}
 
 .btn {
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 10rem;
-  color: #777;
+  color: $color-grey-dark;
   transition-property: transform, box-shadow;
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
   /* For removing blur effect shown while transform */
   backface-visibility: hidden;
   animation: easeOutTop 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards; }
-  .btn--white {
+  animation-fill-mode: backwards;
+
+  &--white{
     background-color: white;
     display: inline-block;
-    padding: .7rem 1.5rem; }
-  .btn:hover {
-    transform: translateY(-0.2rem);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2); }
-  .btn:active {
+    padding: .7rem 1.5rem;
+  }
+  
+  &:hover {
+    transform: translateY(-.2rem);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, .2);
+  }
+  
+  &:active {
     box-shadow: 0 .5rem 1rem;
-    transform: translateY(-0.1rem); }
+    transform: translateY(-.1rem);
+  }
+}
+
+
+
