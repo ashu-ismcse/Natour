@@ -1,162 +1,29 @@
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #24b485;
-$color-grey-dark: #777;
-$color-white: #fff;
+/* 7-1 architecture
+* abstracts contains no actual styles, just Sass mechanisms that help define styles in other directories (sometimes called "helpers"). This includes things like global variables, functions, and mixins. Each of these categories should be placed in their own appropriately-named partial file, as seen above.
 
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
+* vendors contains any third-party stylesheets a project uses. For instance, if we wanted to use Bootstrap alongside our own custom Sass in a project, we'd download the Bootstrap stylesheet and place it here.
 
-body {
-  /* fontfamily in body and not in universal selector because of inheritance,
-  children of body will inherit from body */
-  font-family: Lato, 'sans-sarif';
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.7;
-  color: $color-grey-dark;
-  padding: 3rem;
-  box-sizing: border-box;
-}
+* base contains boilerplate used throughout an entire site. This includes project-wide typography styles, and stylesheets that universally reset or normalize default CSS.
 
-html {
-  font-size: 62.5%;
-}
+* layout contains styles for different aspects of the site's structural layout (think of areas like nav bars, headers, footers, etc.)
 
-.header {
-  position: relative;
-  height: 95vh;
-  background-image: linear-gradient(to right, rgba($color-primary-light, 0.8) , rgba($color-primary-dark, 0.8)) ,url(../img/hero.jpg);
-  /* background size : cover, fills the width of the container */
-  background-size: cover;
-  /* background position : top, will fixthe top and whenever screen size is altered
-  top will not get   cropped */
-  background-position: top;
-  border-radius: 0.3em;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+* components are like "mini" layouts. Styles for small, reusable pieces of the site should reside here (think buttons, forms, profile pictures, etc.)
 
-  &__logo-box {
-    position: absolute;
-    top: 1em;
-    left: 1em;
-  }
+* pages is where page-specific styles reside. For instance, if a project contained several style rules that are only ever used on the "Contact Us" page, they'd live here in a _contact.scss file, as seen above.
 
-  &__logo {
-    height: 2em;
-  }
+* themes is used whenever a site has multiple themes. For instance, the example project above includes both admin and default themes. We can therefore assume this example site is styled entirely differently for logged-in admins. Perhaps to better present and accommodate the additional features an Admin has. Some websites also offer a "night mode", where the background of the site is darker with lighter-colored text for easier reading in low-light environments. An option like this would be represented in its own theme file too.
+*/
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
-  &__text-box {
-    color: white;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-}
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
 
+@import "components/buttons";
 
-.primary-heading{
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  margin-bottom: 5rem;
+@import "layout/header";
 
-  &--main{
-    display: block;
-    letter-spacing: 3.9rem;
-    font-size: 4rem;
-    animation-name: easeOutRight;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-  }
-  
-  &--sub{
-    display: block;
-    font-size: 1.6rem;
-    letter-spacing: 1.5rem;
-    font-weight: 700;
-    animation: easeOutLeft 1s ease-out;
-  }
-}
-
-@keyframes easeOutRight {
-  from {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-
-  80% {
-    transform: translateX(.5rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes easeOutLeft {
-  from {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-
-  80% {
-    transform: translateX(-.5rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes easeOutTop {
-  from {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-
-  to{
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.btn {
-  text-decoration: none;
-  text-transform: uppercase;
-  border-radius: 10rem;
-  color: $color-grey-dark;
-  transition-property: transform, box-shadow;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-out;
-  /* For removing blur effect shown while transform */
-  backface-visibility: hidden;
-  animation: easeOutTop 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards;
-
-  &--white{
-    background-color: white;
-    display: inline-block;
-    padding: .7rem 1.5rem;
-  }
-  
-  &:hover {
-    transform: translateY(-.2rem);
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, .2);
-  }
-  
-  &:active {
-    box-shadow: 0 .5rem 1rem;
-    transform: translateY(-.1rem);
-  }
-}
-
-
-
+@import "pages/home";
