@@ -3,7 +3,7 @@ body {
   children of body will inherit from body */
   font-family: Lato, 'sans-sarif';
   font-weight: 400;
-  font-size: 1.6rem;
+  font-size: $default-font-size;
   line-height: 1.7;
   color: $color-grey-dark;
   padding: 3rem;
@@ -25,9 +25,38 @@ body {
   
   &--sub{
     display: block;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
     letter-spacing: 1.5rem;
     font-weight: 700;
     animation: easeOutLeft 1s ease-out;
+  }
+}
+
+.heading-secondary{
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right , $color-primary-light , $color-primary-dark);
+  -webkit-background-clip: text;
+  color:transparent;
+  transition: transform .3s ease-out;
+  &:hover {
+    transform: skewX(-5deg) skewY(-2deg) scale(1.1);
+    text-shadow: 0.2rem 0.2rem 2rem rgba(#000 , 0.5);
+  }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+  font-weight: 400;
+  &:not(:last-child) {
+    margin-bottom: 4rem;
   }
 }

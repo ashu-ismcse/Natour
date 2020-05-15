@@ -27,3 +27,30 @@
     transform: translateY(-.1rem);
   }
 }
+
+.btn-txt {
+
+  display: inline-block;
+  padding: 3px;
+  font-size: $default-font-size;
+  transition: background-color 0.2s, transform 0.2s;
+  backface-visibility: hidden;
+
+  &:link,
+  &:visited{
+    text-decoration: none;
+    color: $color-primary;
+    border-bottom: 2px solid $color-primary;
+  }
+
+  &:hover{
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 .2rem .2rem rgba(0, 0, 0, .2);
+  }
+
+  &:active{
+    box-shadow: 0 0 0;
+    transform: translateY(2px);
+  }
+}
