@@ -159,6 +159,37 @@ body {
     box-shadow: 0 0 0;
     transform: translateY(2px); }
 
+.composition {
+  position: relative;
+  transition: box-shadow 0.2; }
+  .composition__photo {
+    width: 55%;
+    position: absolute;
+    transition: transform 0.5s ease-out, outline 0.2s, box-shadow .5s;
+    backface-visibility: hidden;
+    box-shadow: 0 1.2rem 0.8rem rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 1rem;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      top: -2rem;
+      left: 7rem; }
+    .composition__photo--p2 {
+      top: 5rem;
+      left: 25.5rem; }
+    .composition__photo--p3 {
+      top: 15rem;
+      left: 12rem; }
+    .composition__photo:hover {
+      z-index: 100;
+      transform: scale(1.05);
+      box-shadow: 0 2.2rem 0.8rem rgba(0, 0, 0, 0.3);
+      outline: 0.8rem solid #55c57a;
+      padding: 0; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95);
+    box-shadow: 0 0.8rem 0.5rem rgba(0, 0, 0, 0.15); }
+
 .header {
   position: relative;
   height: 95vh;
@@ -185,6 +216,7 @@ body {
     text-align: center; }
 
 .row-container {
+  max-width: 114rem;
   margin: 0 auto; }
   .row-container::after {
     content: "";
@@ -192,7 +224,7 @@ body {
     clear: both; }
   .row-container [class^="col-"] {
     float: left;
-    padding: 10px; }
+    padding: 1rem; }
   .row-container .col-1 {
     width: calc(100%*1/12); }
   .row-container .col-2 {
@@ -219,6 +251,6 @@ body {
     width: 100%; }
 
 .section-about {
-  padding: 25rem;
+  padding: 25rem 0;
   background-color: #f7f7f7;
   margin-top: -20vh; }

@@ -1,10 +1,11 @@
 .row-container {
+  max-width: 114rem;
   margin: 0 auto;
   @include clearfix;
 
   [class^="col-"] {
     float: left;
-    padding: 10px;
+    padding: 1rem;
   }
 
   .col-1{
