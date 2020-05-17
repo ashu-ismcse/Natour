@@ -119,6 +119,15 @@ body {
 .u-margin-bottom-large {
   margin-bottom: 8rem; }
 
+.u-margin-top-small {
+  margin-top: 1.5rem; }
+
+.u-margin-top-medium {
+  margin-top: 5rem; }
+
+.u-margin-top-large {
+  margin-top: 8rem; }
+
 .u-icon-medium {
   font-size: 5rem;
   font-weight: 900;
@@ -144,6 +153,11 @@ body {
     background-color: white;
     display: inline-block;
     padding: .7rem 1.5rem; }
+  .btn--green {
+    background-color: #55c57a;
+    display: inline-block;
+    padding: .7rem 1.5rem;
+    color: white; }
   .btn:hover {
     transform: translateY(-0.2rem);
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2); }
@@ -233,7 +247,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    overflow: hidden; }
+    overflow: hidden;
+    border-radius: 5px; }
     .card__side--front {
       backface-visibility: hidden; }
     .card__side--back {
@@ -292,6 +307,19 @@ body {
       border-bottom: 1px solid #eee; }
       .card__details li:not(:last-child) {
         margin-bottom: 2rem; }
+  .card__cta {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 30%; }
+  .card__pricebox {
+    margin-bottom: 10rem;
+    color: white; }
+    .card__pricebox--only {
+      text-transform: uppercase; }
+    .card__pricebox--value {
+      font-size: 5rem;
+      font-weight: 200; }
 
 .header {
   position: relative;

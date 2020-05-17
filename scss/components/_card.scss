@@ -13,20 +13,9 @@
     left: 0;
     width: 100%;
     overflow: hidden;
+    border-radius: 5px;
     &--front{
       backface-visibility: hidden;
-
-      &-1{
-
-      }
-
-      &-2{
-
-      }
-
-      &-3{
-
-      }
 
     }
 
@@ -124,6 +113,25 @@
       &:not(:last-child) {
         margin-bottom: 2rem;
       }
+    }
+  }
+
+  &__cta {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+  }
+
+  &__pricebox {
+    margin-bottom: 10rem;
+    color: white;
+    &--only {
+      text-transform: uppercase;
+    }
+    &--value{
+      font-size: 5rem;
+      font-weight: 200;
     }
   }
 }
