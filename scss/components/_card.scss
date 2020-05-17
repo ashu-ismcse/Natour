@@ -5,14 +5,15 @@
   perspective: 150rem;
   
   &__side {
+    height: 50rem;
     transition: transform .5s ease-out;
     position: absolute;
+    box-shadow: 0 1.2rem 2rem rgba($color-black , .3);
     top: 0;
     left: 0;
     width: 100%;
+    overflow: hidden;
     &--front{
-      background-color: orangered;
-      height: 50rem;
       backface-visibility: hidden;
 
       &-1{
@@ -31,7 +32,6 @@
 
     &--back{
       transform: rotateY(180deg);
-      height: 50rem;
       backface-visibility: hidden;
 
       &-1{
@@ -54,6 +54,76 @@
   }
 
   &:hover &__side--back {
-    transform: rotateY(0deg);
+    transform: rotateY(360deg);
+  }
+
+  &__photo {
+
+    height: 40%;
+    background-blend-mode: screen;
+
+    &--1 {
+      background-image: linear-gradient(to right , $color-secondary-light , $color-secondary-dark), 
+      url(../img/nat-5.jpg) ;
+      background-size: cover;
+      clip-path: polygon(0 0 , 100% 0 , 100% 85% , 0 100%);
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right , $color-primary-light , $color-primary-dark), 
+      url(../img/nat-6.jpg) ;
+      background-size: cover;
+      clip-path: polygon(0 0 , 100% 0 , 100% 85% , 0 100%);
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right , $color-tertiary-light , $color-tertiary-dark), 
+      url(../img/nat-7.jpg) ;
+      background-size: cover;
+      clip-path: polygon(0 0 , 100% 0 , 100% 85% , 0 100%);
+    }
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: 300;
+    width: 20rem;
+    padding: 1rem;
+    position: absolute;
+    top: 20%;
+    right: 2rem;
+    text-align: right;
+    color: $color-white;
+
+    &--span {
+      
+      -webkit-box-decoration-break: clone;
+      padding: 1rem;
+
+      &--1 {
+        background-image: linear-gradient(to right , rgba($color-secondary-light , 0.85) , rgba($color-secondary-dark , 0.85));
+      }
+
+      &--2{
+        background-image: linear-gradient(to right , rgba($color-primary-light , 0.85) , rgba($color-primary-dark , 0.85));
+      }
+
+      &--3{
+        background-image: linear-gradient(to right , rgba($color-tertiary-light , 0.85) , rgba($color-tertiary-dark , 0.85));
+      }
+    }
+  }
+
+  &__details {
+    list-style: none;
+    text-align: center;
+    width: 80%;
+    margin: 3rem auto 0;
+    li {
+      border-bottom: 1px solid #eee;
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
   }
 }
