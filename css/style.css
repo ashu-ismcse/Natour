@@ -49,7 +49,8 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  perspective: 150rem; }
 
 body {
   box-sizing: border-box; }
@@ -204,7 +205,7 @@ body {
     padding: 1.5rem;
     text-align: center;
     border-radius: 3px;
-    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1.5rem 2rem rgba(36, 180, 133, 0.15);
     transition: transform .3s;
     backface-visibility: hidden; }
     .feature-box__container:hover {
@@ -216,6 +217,35 @@ body {
     color: transparent; }
   .feature-box__text {
     backface-visibility: hidden; }
+
+.card {
+  height: 50rem;
+  position: relative;
+  perspective: 150rem; }
+  .card__side {
+    transition: transform .5s ease-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; }
+    .card__side--front {
+      background-color: orangered;
+      height: 50rem;
+      backface-visibility: hidden; }
+    .card__side--back {
+      transform: rotateY(180deg);
+      height: 50rem;
+      backface-visibility: hidden; }
+      .card__side--back-1 {
+        background-image: linear-gradient(to bottom right, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to bottom right, #7ed56f, #24b485); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to bottom right, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
+    transform: rotateY(180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0deg); }
 
 .header {
   position: relative;
@@ -291,3 +321,8 @@ body {
   margin-top: -20vh; }
   .section-features > * {
     transform: skewY(6deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
