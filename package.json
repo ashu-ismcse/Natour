@@ -4,7 +4,8 @@
   "description": "Landing page for natours",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass scss/main.scss css/style.css -w"
+    "compile:sass": "node-sass scss/main.scss css/style.css -w",
+    "start": "lite-server"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/ashu-ismcse/Natour#readme",
   "devDependencies": {
     "node-sass": "^4.14.1"
+  },
+  "dependencies": {
+    "lite-server": "^2.5.4"
   }
 }
