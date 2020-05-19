@@ -149,7 +149,9 @@ body {
   /* For removing blur effect shown while transform */
   backface-visibility: hidden;
   animation: easeOutTop 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+  border: none;
+  cursor: pointer; }
   .btn--white {
     background-color: white;
     display: inline-block;
@@ -162,7 +164,8 @@ body {
   .btn:hover {
     transform: translateY(-0.2rem);
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2); }
-  .btn:active {
+  .btn:active, .btn:focus {
+    outline: none;
     box-shadow: 0 .5rem 1rem;
     transform: translateY(-0.1rem); }
 
@@ -195,58 +198,6 @@ body {
   height: 100%; }
   .bg-video__content {
     object-fit: cover; }
-
-.composition {
-  position: relative;
-  transition: box-shadow 0.2; }
-  .composition__photo {
-    width: 55%;
-    position: absolute;
-    transition: transform 0.5s ease-out, outline 0.2s, box-shadow .5s;
-    backface-visibility: hidden;
-    box-shadow: 0 1.2rem 0.8rem rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-    padding: 1rem;
-    outline-offset: 2rem; }
-    .composition__photo--p1 {
-      top: -2rem;
-      left: 7rem; }
-    .composition__photo--p2 {
-      top: 5rem;
-      left: 25.5rem; }
-    .composition__photo--p3 {
-      top: 15rem;
-      left: 12rem; }
-    .composition__photo:hover {
-      z-index: 100;
-      transform: scale(1.05);
-      box-shadow: 0 2.2rem 0.8rem rgba(0, 0, 0, 0.3);
-      outline: 0.8rem solid #55c57a;
-      padding: 0; }
-  .composition:hover .composition__photo:not(:hover) {
-    transform: scale(0.95);
-    box-shadow: 0 0.8rem 0.5rem rgba(0, 0, 0, 0.15); }
-
-.feature-box {
-  padding: 10rem; }
-  .feature-box__container {
-    background-color: rgba(255, 255, 255, 0.8);
-    font-size: 1.5rem;
-    padding: 1.5rem;
-    text-align: center;
-    border-radius: 3px;
-    box-shadow: 0 1.5rem 2rem rgba(36, 180, 133, 0.15);
-    transition: transform .3s;
-    backface-visibility: hidden; }
-    .feature-box__container:hover {
-      transform: translateY(-2px) scale(1.03); }
-  .feature-box__icon {
-    font-size: 6rem;
-    background-image: linear-gradient(to right, #7ed56f, #24b485);
-    -webkit-background-clip: text;
-    color: transparent; }
-  .feature-box__text {
-    backface-visibility: hidden; }
 
 .card {
   height: 50rem;
@@ -333,6 +284,124 @@ body {
     .card__pricebox--value {
       font-size: 5rem;
       font-weight: 200; }
+
+.composition {
+  position: relative;
+  transition: box-shadow 0.2; }
+  .composition__photo {
+    width: 55%;
+    position: absolute;
+    transition: transform 0.5s ease-out, outline 0.2s, box-shadow .5s;
+    backface-visibility: hidden;
+    box-shadow: 0 1.2rem 0.8rem rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 1rem;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      top: -2rem;
+      left: 7rem; }
+    .composition__photo--p2 {
+      top: 5rem;
+      left: 25.5rem; }
+    .composition__photo--p3 {
+      top: 15rem;
+      left: 12rem; }
+    .composition__photo:hover {
+      z-index: 100;
+      transform: scale(1.05);
+      box-shadow: 0 2.2rem 0.8rem rgba(0, 0, 0, 0.3);
+      outline: 0.8rem solid #55c57a;
+      padding: 0; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95);
+    box-shadow: 0 0.8rem 0.5rem rgba(0, 0, 0, 0.15); }
+
+.feature-box {
+  padding: 10rem; }
+  .feature-box__container {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 2rem rgba(36, 180, 133, 0.15);
+    transition: transform .3s;
+    backface-visibility: hidden; }
+    .feature-box__container:hover {
+      transform: translateY(-2px) scale(1.03); }
+  .feature-box__icon {
+    font-size: 6rem;
+    background-image: linear-gradient(to right, #7ed56f, #24b485);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box__text {
+    backface-visibility: hidden; }
+
+.form__group:not(:last-child) {
+  margin-bottom: 2.5rem; }
+
+.form__input {
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+  font-family: inherit;
+  display: block;
+  border-radius: 3px;
+  border: 3px solid transparent;
+  width: 90%; }
+  .form__input:focus {
+    outline: none;
+    border-bottom: 3px solid #55c57a;
+    box-shadow: 0 1.2rem 1.2rem rgba(0, 0, 0, 0.1); }
+  .form__input:focus:invalid {
+    border-bottom: 3px solid #ff7730; }
+
+.form__label {
+  display: block;
+  transform: translateY(-8rem) translateX(2.3rem);
+  opacity: 1;
+  transition: transform .3s ease-out; }
+
+.form__input:placeholder-shown + .form__label {
+  transform: translateY(-4rem) translateX(2.3rem); }
+
+.form__radio {
+  display: inline-block;
+  padding: 0 2rem;
+  position: relative; }
+  .form__radio:not(:last-child) {
+    margin-right: 5rem; }
+  .form__radio-input {
+    display: none; }
+  .form__radio-label {
+    margin-left: 1rem;
+    cursor: pointer; }
+  .form__radio-button {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: 3px solid #55c57a;
+    position: absolute;
+    top: .5rem;
+    left: 0; }
+    .form__radio-button::after {
+      content: "";
+      display: none;
+      transform: translate(-50%, -50%);
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      background-color: #55c57a;
+      position: absolute;
+      top: 50%;
+      left: 50%; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+    display: block; }
+
+.form__submit .btn {
+  display: inline-block;
+  text-align: center;
+  animation: none; }
 
 .story {
   background-color: rgba(255, 255, 255, 0.6);
@@ -468,3 +537,14 @@ body {
 .section-stories {
   padding: 10rem 0 15rem;
   position: relative; }
+
+.section-booking {
+  padding: 15rem 0;
+  background-image: linear-gradient(to bottom right, #7ed56f, #24b485); }
+  .section-booking .book {
+    height: 50rem;
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../img/nat-10.jpg");
+    background-size: cover; }
+    .section-booking .book__form {
+      width: 50%;
+      padding: 6rem; }
