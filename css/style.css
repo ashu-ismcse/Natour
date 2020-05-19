@@ -149,7 +149,9 @@ body {
   /* For removing blur effect shown while transform */
   backface-visibility: hidden;
   animation: easeOutTop 0.5s ease-out 0.75s;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+  border: none;
+  cursor: pointer; }
   .btn--white {
     background-color: white;
     display: inline-block;
@@ -162,7 +164,8 @@ body {
   .btn:hover {
     transform: translateY(-0.2rem);
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2); }
-  .btn:active {
+  .btn:active, .btn:focus {
+    outline: none;
     box-shadow: 0 .5rem 1rem;
     transform: translateY(-0.1rem); }
 
@@ -335,7 +338,7 @@ body {
     backface-visibility: hidden; }
 
 .form__group:not(:last-child) {
-  margin-bottom: 3rem; }
+  margin-bottom: 2.5rem; }
 
 .form__input {
   padding: 1.5rem 2rem;
@@ -343,7 +346,7 @@ body {
   font-family: inherit;
   display: block;
   border-radius: 3px;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   width: 90%; }
   .form__input:focus {
     outline: none;
@@ -354,13 +357,51 @@ body {
 
 .form__label {
   display: block;
-  margin-left: 2rem;
-  transform: translateY(-8rem);
+  transform: translateY(-8rem) translateX(2.3rem);
   opacity: 1;
   transition: transform .3s ease-out; }
 
 .form__input:placeholder-shown + .form__label {
-  transform: translateY(-4rem); }
+  transform: translateY(-4rem) translateX(2.3rem); }
+
+.form__radio {
+  display: inline-block;
+  padding: 0 2rem;
+  position: relative; }
+  .form__radio:not(:last-child) {
+    margin-right: 5rem; }
+  .form__radio-input {
+    display: none; }
+  .form__radio-label {
+    margin-left: 1rem;
+    cursor: pointer; }
+  .form__radio-button {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: 3px solid #55c57a;
+    position: absolute;
+    top: .5rem;
+    left: 0; }
+    .form__radio-button::after {
+      content: "";
+      display: none;
+      transform: translate(-50%, -50%);
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      background-color: #55c57a;
+      position: absolute;
+      top: 50%;
+      left: 50%; }
+  .form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+    display: block; }
+
+.form__submit .btn {
+  display: inline-block;
+  text-align: center;
+  animation: none; }
 
 .story {
   background-color: rgba(255, 255, 255, 0.6);
