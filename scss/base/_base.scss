@@ -8,7 +8,8 @@
 
 html {
   font-size: 62.5%;
-  perspective: 150rem;
+  // perspective: 150rem;
+  // causing position: fixed element to move when scroll
 }
 
 body {
