@@ -16,6 +16,34 @@
     <title>Natours | Exciting tours for adventurous people</title>
   </head>
   <body>
+    <div class="navigation">
+      <input type="checkbox" class="navigation__input" id="nav-input" />
+      <label for="nav-input" class="navigation__label">
+        <!-- <span class="navigation__icon navigation__icon--1"></span> -->
+        <span class="navigation__icon navigation__icon--2"></span>
+        <!-- <span class="navigation__icon navigation__icon--3"></span> -->
+      </label>
+      <div class="navigation__background">&nbsp;</div>
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__list--item">
+            <a href="#section-about" class="navigation__link">About Natour</a>
+          </li>
+          <li class="navigation__list--item">
+            <a href="#section-features" class="navigation__link">Your Benefit</a>
+          </li>
+          <li class="navigation__list--item">
+            <a href="#section-tours" class="navigation__link">Popular Tours</a>
+          </li>
+          <li class="navigation__list--item">
+            <a href="#section-stories" class="navigation__link">Stories</a>
+          </li>
+          <li class="navigation__list--item">
+            <a href="#section-booking" class="navigation__link">Book Now</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <header class="header">
       <div class="header__logo-box">
         <img class="header__logo" src="img/logo-white.png" alt="Natours Logo" />
@@ -30,7 +58,7 @@
     </header>
 
     <main>
-      <section class="section-about">
+      <section id="section-about" class="section-about">
         <div class="u-text-center u-margin-bottom-large">
           <h2 class="heading-secondary">
             Exciting tour for Adventurous people
@@ -81,7 +109,7 @@
           </div>
         </div>
       </section>
-      <section class="section-features">
+      <section id="section-features" class="section-features">
         <div class="row-container">
           <div class="col-3 feature-box">
             <div class="feature-box__container u-text-center">
@@ -133,7 +161,7 @@
           </div>
         </div>
       </section>
-      <section class="section-tours">
+      <section id="section-tours" class="section-tours">
         <h2 class="heading-secondary u-text-center u-margin-bottom-large">
           Most popular tours
         </h2>
@@ -227,7 +255,7 @@
           <a href="#" class="btn btn--green">Discover all tours</a>
         </div>
       </section>
-      <section class="section-stories">
+      <section id="section-stories" class="section-stories">
         <div class="bg-video">
           <video class="bg-video__content" autoplay muted loop>
             <source src="img/video.mp4" />
@@ -283,7 +311,7 @@
           </div>
         </div>
       </section>
-      <section class="section-booking">
+      <section id="section-booking" class="section-booking">
         <div class="row-container">
           <div class="book">
             <form action="#" class="book__form">
@@ -381,9 +409,19 @@
       <div class="footer__copyright">
         <p class="footer__copyright--text">
           Built By
-          <a href="https://www.linkedin.com/in/maheshwari-ashutosh/" target="_blank" class="footer__link">Ashutosh Maheshwari</a> while taking
-          an online course on Udemy
-          <a href="https://www.udemy.com/course/advanced-css-and-sass/" target="_blank" class="footer__link">Advanced CSS and Sass.</a>
+          <a
+            href="https://www.linkedin.com/in/maheshwari-ashutosh/"
+            target="_blank"
+            class="footer__link"
+            >Ashutosh Maheshwari</a
+          >
+          while taking an online course on Udemy
+          <a
+            href="https://www.udemy.com/course/advanced-css-and-sass/"
+            target="_blank"
+            class="footer__link"
+            >Advanced CSS and Sass.</a
+          >
         </p>
       </div>
     </footer>
