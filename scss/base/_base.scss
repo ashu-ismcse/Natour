@@ -7,9 +7,22 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; //1rem = 10px;
   // perspective: 150rem;
   // causing position: fixed element to move when scroll
+
+  @include respond(tab-land) { // 1rem = 9px; 
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-pot) { // 1rem = 8px;
+    font-size: 50%;
+  }
+
+  @include respond(big-screen) { // 1rem = 12px
+    font-size: 75%;
+  }
+
 }
 
 body {

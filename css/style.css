@@ -13,6 +13,13 @@
 
 * themes is used whenever a site has multiple themes. For instance, the example project above includes both admin and default themes. We can therefore assume this example site is styled entirely differently for logged-in admins. Perhaps to better present and accommodate the additional features an Admin has. Some websites also offer a "night mode", where the background of the site is darker with lighter-colored text for easier reading in low-light environments. An option like this would be represented in its own theme file too.
 */
+/*
+  phone : max-width:600px (600/16(default font size provided by browser) = 37.5em)
+  tab-pot : max-width:900px (900/16 = 56.25em)
+  tab-land : max-width:1200px (1200/16 = 75em)
+  (Default css behaviour)
+  big-screen : min-width:1800px (1200/16 = 112.5em)
+*/
 @keyframes easeOutRight {
   from {
     opacity: 0;
@@ -50,6 +57,15 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
