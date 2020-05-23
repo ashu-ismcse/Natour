@@ -10,12 +10,17 @@
   }
 
   &__logo {
-    width: 10rem;
+    width: 5rem;
     height: auto;
   }
 
   &__navigation {
     display: inline;
+    @include respond(tab-pot) {
+      display: block;
+      text-align: center;
+      margin: 1rem auto;
+    }
   }
 
   &__list {
@@ -27,13 +32,28 @@
       &:not(:last-child) {
         margin-right: 2rem;
       }
+      @include respond(tab-pot) {
+        float: none;
+        display: inline;  
+      }
+    }
+    @include respond(tab-pot) {
+      width: 60%;
     }
   }
 
   &__copyright{
-    border-top: 1px solid $color-grey-light-1 ;
     float: right;
     width: 40%;
+    &--text {
+      border-top: 1px solid $color-grey-light-1 ;
+    }
+    @include respond(tab-pot) {
+      width: 60%;
+      margin: 2rem auto;
+      float: none;
+      text-align: center;
+    }
   }
 
   &__link {
@@ -50,4 +70,9 @@
       text-shadow: 0 1rem 2rem rgba($color-black,.1);
     }
   }
+
+  @include respond(tab-pot) {
+    padding: 3rem;
+  }
+
 }

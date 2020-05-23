@@ -1,7 +1,17 @@
 .composition {
-
   position: relative;
   transition: box-shadow 0.2;
+  @include respond(tab-land) {
+    padding: 20rem;
+  }
+  @include respond(tab-pot) {
+    padding: 13rem;
+  }
+  @include respond(phone) {
+    padding: 8rem;
+  }
+  top: 0;
+  left: 0;
 
   &__photo {
     width: 55%;
@@ -13,19 +23,51 @@
     padding: 1rem;
     outline-offset: 2rem;
 
+    @include respond(tab-land) {
+      width: 60%;
+    }
+    @include respond(tab-pot) {
+      width: 30%;
+    }
+
     &--p1 {
       top: -2rem;
       left: 7rem;
+      @include respond(tab-land) {
+        top: 0;
+        left: 17rem;
+      }
+      @include respond(tab-pot) {
+        top: 0;
+        left: 3rem;
+      }
     }
 
     &--p2 {
       top: 5rem;
       left: 25.5rem;
+
+      @include respond(tab-land) {
+        top: 10rem;
+        left: 2rem;
+      }
+      @include respond(tab-pot) {
+        top: -2rem;
+        left: calc(30% + 3rem);
+      }
     }
 
     &--p3 {
       top: 15rem;
       left: 12rem;
+      @include respond(tab-land) {
+        top: 17rem;
+        left: 20rem;
+      }
+      @include respond(tab-pot) {
+        top: 0;
+        left: calc(60% + 3rem);
+      }
     }
 
     &:hover {
