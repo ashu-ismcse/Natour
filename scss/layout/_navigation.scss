@@ -13,6 +13,7 @@
     right: 6rem;
     background-color: white;
     z-index: 2000;
+    box-shadow: 0 2rem 2rem rgba($color-black , .2);
     cursor: pointer;
     @include respond(tab-pot) {
       height: 5rem;

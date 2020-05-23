@@ -2,16 +2,17 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  background-color: rgba(transparent , .8);
+  background-color: rgba(transparent, 0.3);
   top: 0;
   left: 0;
   // transform: translate(-50% , -50%);
   z-index: 4000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
   overflow: hidden;
-  
+  backdrop-filter: blur(3px);
+
   &:target {
     opacity: 1;
     visibility: visible;
@@ -19,12 +20,12 @@
 
   &:target &__content {
     opacity: 1;
-    transform: translate(-50% , -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 
   &__close {
     position: absolute;
-    top: .5rem;
+    top: 0.5rem;
     right: 1rem;
     text-decoration: none;
     color: $color-grey-dark;
@@ -35,13 +36,15 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%) scale(.5);
+    transform: translate(-50%, -50%) scale(0.5);
     background-color: $color-grey-light-1;
     display: table;
     opacity: 0;
-    transition: transform .4s;
+    transition: transform 0.4s;
     backface-visibility: hidden;
-    @include respond(tab-land) {
+    border-radius: 5px;
+    box-shadow: 0 2rem 2rem rgba($color-black, 0.2);
+    @include respond(phone) {
       display: block;
       width: 100%;
     }
@@ -56,6 +59,10 @@
       float: left;
       padding: 3rem;
     }
+
+    @include respond(phone) {
+      padding: 1.5rem;
+    }
   }
 
   &__left {
@@ -67,7 +74,7 @@
     }
   }
 
-  &__right{
+  &__right {
     display: table-cell;
     padding: 3rem 5rem;
     width: 66.6666%;
@@ -75,6 +82,12 @@
     @include respond(tab-land) {
       display: block;
       width: 100%;
+    }
+    @include respond(phone) {
+      padding: 3rem 1rem;
+      display: block;
+      width: 100%;
+      font-size: 1rem;
     }
   }
 
