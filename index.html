@@ -67,7 +67,7 @@
           </h2>
         </div>
         <div class="row-container">
-          <div class="col-6">
+          <div class="col-6 col-sm-12">
             <div class="col">
               <h3 class="heading-tertiary u-margin-bottom-small">
                 You are going to fall in love with nature
@@ -90,7 +90,7 @@
               <a href="#" class="btn-txt">Know more &rarr;</a>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-6 col-sm-12">
             <div class="col composition">
               <img
                 src="img/nat-1-large.jpg"
@@ -113,7 +113,7 @@
       </section>
       <section id="section-features" class="section-features">
         <div class="row-container">
-          <div class="col-3 feature-box">
+          <div class="col-3 col-md-6 col-xs-12 feature-box">
             <div class="feature-box__container u-text-center">
               <i class="feature-box__icon icon-basic-world u-icon-medium"></i>
               <h3 class="heading-tertiary u-margin-bottom-small">
@@ -125,7 +125,7 @@
               </p>
             </div>
           </div>
-          <div class="col-3 feature-box">
+          <div class="col-3 col-md-6 col-xs-12 feature-box">
             <div class="feature-box__container u-text-center">
               <i class="feature-box__icon icon-basic-compass u-icon-medium"></i>
               <h3 class="heading-tertiary u-margin-bottom-small">
@@ -137,7 +137,7 @@
               </p>
             </div>
           </div>
-          <div class="col-3 feature-box">
+          <div class="col-3 col-md-6 col-xs-12 feature-box">
             <div class="feature-box__container u-text-center">
               <i class="feature-box__icon icon-basic-map u-icon-medium"></i>
               <h3 class="heading-tertiary u-margin-bottom-small">
@@ -149,7 +149,7 @@
               </p>
             </div>
           </div>
-          <div class="col-3 feature-box">
+          <div class="col-3 col-md-6 col-xs-12 feature-box">
             <div class="feature-box__container u-text-center">
               <i class="feature-box__icon icon-basic-heart u-icon-medium"></i>
               <h3 class="heading-tertiary u-margin-bottom-small">
@@ -163,12 +163,12 @@
           </div>
         </div>
       </section>
-      <section id="section-tours" class="section-tours">
+      <section id="section-tours" class="section-tours u-text-center">
         <h2 class="heading-secondary u-text-center u-margin-bottom-large">
           Most popular tours
         </h2>
         <div class="row-container">
-          <div class="col-4">
+          <div class="col-4 col-sm-12">
             <div class="card">
               <div class="card__side card__side--front">
                 <div class="card__photo card__photo--1"></div>
@@ -196,7 +196,7 @@
               </div>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-4 col-sm-12">
             <div class="card">
               <div class="card__side card__side--front">
                 <div class="card__photo card__photo--2"></div>
@@ -224,7 +224,7 @@
               </div>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-4 col-sm-12">
             <div class="card">
               <div class="card__side card__side--front">
                 <div class="card__photo card__photo--3"></div>
@@ -383,11 +383,20 @@
     </main>
     <footer class="footer">
       <div class="footer__logobox">
-        <img
-          src="img/logo-green-2x.png"
-          alt="Natour logo"
-          class="footer__logo"
-        />
+        <picture class = "footer__logo">
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5em)"
+          />
+          <!-- Fall back -->
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Natour logo"
+          />
+        </picture>
       </div>
       <div class="footer__navigation">
         <ul class="footer__list">
@@ -427,7 +436,7 @@
         </p>
       </div>
     </footer>
-    <div id = "popup" class="popup">
+    <div id="popup" class="popup">
       <div class="popup__content">
         <a href="#section-tours" class="popup__close">X</a>
         <div class="popup__left">
